@@ -2,10 +2,10 @@ import express from "express";
 import urlRoute from "./routes/route.js";
 import { connectDB } from "./connect.js";
 import { URL } from "./models/models.js";
+import dotenv from "dotenv";
+dotenv.config();
 
-connectDB(
-  "mongodb+srv://souravmahato6563:Babu7364@cluster0.mmyhc.mongodb.net/url_shortner?retryWrites=true&w=majority&appName=Cluster0"
-);
+connectDB(process.env.MONGODB_URI);
 
 const app = express();
 const PORT = process.env.PORT || 8000;

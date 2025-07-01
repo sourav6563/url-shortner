@@ -1,0 +1,40 @@
+# Node modules (VERY important)
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Optional cache folders
+.cache/
+dist/
+build/
+
+# Debugging
+*.pid
+
+# VS Code settings (optional)
+.vscode/
+
+# Coverage reports (if using testing)
+coverage/
+
+# TypeScript (if using)
+*.tsbuildinfo
+
+# PM2 logs (if using PM2)
+pids/
+*.pid
+*.seed
+*.log
+
+# Docker files
+docker-compose.override.yml

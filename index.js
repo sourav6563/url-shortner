@@ -5,8 +5,9 @@ import path from "path";
 import dotenv from "dotenv";
 import urlRoute from "./routes/route.js";
 import staticRoute from "./routes/staticRoute.js";
-import userRoute from "./routes/userRoute.js";
-
+import userRoute from "./routes/users.js";
+import cookieParser from "cookie-parser";
+import { restrictTologgedinUserOnly } from "./middlewares/auth.js";
 dotenv.config();
 
 connectDB(process.env.MONGODB_URI);
@@ -19,11 +20,12 @@ app.listen(PORT, () => {
 });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
 app.use("/url", urlRoute);
-
+app.use("/user", userRoute);
 
 app.use("/", staticRoute);
 

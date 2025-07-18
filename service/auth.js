@@ -1,4 +1,5 @@
-const sessionIdtoUserMap = new Map();
+// const sessionIdtoUserMap = new Map();
+import jwt from "jsonwebtoken";
 const setUser = (id, user) => {
   sessionIdtoUserMap.set(id, user);
 };
